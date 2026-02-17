@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Person</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Person List</h2>
+<button class="center-btn" onclick="openAdd()">Add Person</button>
+
+<p><b>Total Person:</b> <span id="totalPerson">0</span></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="personTable"></tbody>
+</table>
+
+<div class="modal" id="personModal">
+    <div class="modal-content">
+        <h3 id="modalTitle">Add Person</h3>
+
+        <div class="form-group">
+            <div class="label-row">
+                <label>Name</label>
+                <span class="limit">5-20 characters</span>
+            </div>
+            <span id="nameError" class="error"></span>
+            <input type="text" id="name">
+        </div>
+
+        <div class="form-group">
+            <div class="label-row">
+                <label>Age</label>
+                <span class="limit">20+ only</span>
+            </div>
+            <span id="ageError" class="error"></span>
+            <input type="number" id="age">
+        </div>
+
+        <div class="form-group">
+            <div class="label-row">
+                <label>Address</label>
+                <span class="limit">10-14 characters</span>
+            </div>
+            <span id="addressError" class="error"></span>
+            <input type="text" id="address">
+        </div>
+
+        <div class="form-group">
+            <div class="label-row">
+                <label>Phone</label>
+                <span class="limit">9-12 digits</span>
+            </div>
+            <span id="phoneError" class="error"></span>
+            <div class="phone-box">
+                <div class="phone-prefix">08</div>
+                <input type="text" id="phone" class="phone-input">
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button onclick="savePerson()">Save</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
