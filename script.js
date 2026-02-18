@@ -1,12 +1,10 @@
 const COLORS = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#06b6d4','#ec4899','#0ea5e9','#84cc16'];
 
 let employees = [];
-
 let nextId = 1;
-let editingId  = null;
-let deleteId   = null;
+let editingId = null;
+let deleteId = null;
 let searchQuery = '';
-
 const colorMap = {};
 
 function getColor(id) {
@@ -50,7 +48,7 @@ function render() {
       <td><span class="row-no">${i + 1}</span></td>
       <td>
         <div class="employee-cell">
-          <div class="avatar" style="background:${getColor(e.id)}">${initials(e.name)}</div>
+          <div class="avatar" style="color:${getColor(e.id)};border-color:${getColor(e.id)};background:${getColor(e.id)}22">${initials(e.name)}</div>
           <div>
             <div class="emp-name">${e.name}</div>
           </div>
@@ -60,7 +58,7 @@ function render() {
       <td>${e.address}</td>
       <td>${e.phone}</td>
       <td>
-        <div class="action-btns" style="justify-content:flex-end">
+        <div class="action-btns" style="justify-content:center">
           <button class="btn-icon edit" title="Edit" onclick="openEditModal(${e.id})">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -155,10 +153,10 @@ function saveEmployee() {
   clearErrors();
   let valid = true;
 
-  if (name.length < 5 || name.length > 20)          { showError('Name',    'Name must be 5–20 characters.');                  valid = false; }
-  if (!age || age <= 20)                             { showError('Age',     'Age must be greater than 20.');                   valid = false; }
-  if (address.length < 10 || address.length > 40)   { showError('Address', 'Address must be 10–40 characters.');              valid = false; }
-  if (!/^08\d{7,10}$/.test(phone))                  { showError('Phone',   'Phone must be 9-12 digits and start with 08.');   valid = false; }
+  if (name.length < 5 || name.length > 20)        { showError('Name',    'Name must be 5–20 characters.');                valid = false; }
+  if (!age || age <= 20)                           { showError('Age',     'Age must be greater than 20.');                 valid = false; }
+  if (address.length < 10 || address.length > 40) { showError('Address', 'Address must be 10–40 characters.');            valid = false; }
+  if (!/^08\d{7,10}$/.test(phone))                { showError('Phone',   'Phone must be 9-12 digits and start with 08.'); valid = false; }
 
   if (!valid) return;
 

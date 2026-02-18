@@ -10,7 +10,11 @@
 <body>
 
 <nav>
-  <div class="nav-logo">P</div>
+  <div class="nav-logo">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+    </svg>
+  </div>
   <span>PT ECOAS</span>
 </nav>
 
@@ -56,7 +60,7 @@
             <th style="text-align:center">Age</th>
             <th>Address</th>
             <th>Phone</th>
-            <th style="text-align:right">Action</th>
+            <th style="text-align:center">Action</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
@@ -72,6 +76,7 @@
   </div>
 </main>
 
+<!-- ADD / EDIT MODAL -->
 <div class="modal-overlay" id="formModal">
   <div class="modal">
     <div class="modal-header-new">
@@ -135,6 +140,7 @@
   </div>
 </div>
 
+<!-- DELETE CONFIRM MODAL -->
 <div class="modal-overlay" id="confirmModal">
   <div class="modal confirm-modal">
     <div class="modal-body">
